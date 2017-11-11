@@ -1,3 +1,7 @@
+1.need to execute the db scripts present in rajneesh.sql file in root folder
+2. Need to run "php myscript.php" in root folder. This script imports data from github api and imports into mysql.
+3 Need to go to http://localhost/knplabs-rajneesh link.
+
 # CakePHP Application Skeleton
 
 [![Build Status](https://img.shields.io/travis/cakephp/app/master.svg?style=flat-square)](https://travis-ci.org/cakephp/app)
