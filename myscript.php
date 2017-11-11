@@ -19,7 +19,7 @@ $repos = $client->api('user')->repositories('KnpLabs');
 	} 
 
 	// Create database
-	$sql = "CREATE DATABASE rajneesh";
+	$sql = "CREATE DATABASE IF NOT EXISTS rajneesh";
 	if ($conn->query($sql) === TRUE) {
 		echo "Database created successfully\n";
 	} else {
@@ -34,7 +34,7 @@ $repos = $client->api('user')->repositories('KnpLabs');
 		$cnt = 0;
 		foreach($repos as $repo) {
 			$cnt++;
-			$mysqli->query('INSERT INTO repositories(name, full_name, size, updated_at, git_url) VALUES("'.$repo['name'].'", "'. $repo['full_name'].'", "'.$repo['size'].'", "'.$repo['updated_at'].'", "'.$repo['git_url'].'")');
+			$mysqli->query('INSERT INTO repositories(name, full_name, size, updated_at, git_url) VALUES("'.$repo['name'].'", "'. $repo['full_name'].'", "'.$repo['size'].'", "'.date("Y-m-d",strtotime($repo['updated_at'])).'", "'.$repo['git_url'].'")');
 		}
 		echo "\nTotal $cnt records inserted";
 	} else {
