@@ -5,9 +5,9 @@ STEPS TO RUN
 
 3. composer install
 
-2. Need to run "php myscript.php" in root folder. This script imports data from github api and imports into mysql.
+4. Need to run "php myscript.php" in root folder. This script imports data from github api and imports into mysql.
 
-3 Need to go to http://localhost/knplabs-rajneesh link.
+5 Need to go to http://localhost/knplabs-rajneesh link.
 
 
 
