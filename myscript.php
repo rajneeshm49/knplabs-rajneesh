@@ -6,6 +6,26 @@ $repos = $client->api('user')->repositories('KnpLabs');
 // print_r($repositories);exit;
 
 
+
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password);
+	// Check connection
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	} 
+
+	// Create database
+	$sql = "CREATE DATABASE rajneesh\n";
+	if ($conn->query($sql) === TRUE) {
+		echo "Database created successfully\n";
+	} else {
+		echo "Error creating database: " . $conn->error;
+	}
+
     $mysqli = new mysqli("localhost", "root", "", "rajneesh");
 	if($mysqli) {
 		echo "Database connected successfully";
@@ -20,5 +40,6 @@ $repos = $client->api('user')->repositories('KnpLabs');
 	} else {
 		echo "coudnt connect to database";
 	}
+
 
 ?>
