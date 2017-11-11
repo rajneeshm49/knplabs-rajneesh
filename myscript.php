@@ -19,7 +19,7 @@ $repos = $client->api('user')->repositories('KnpLabs');
 	} 
 
 	// Create database
-	$sql = "CREATE DATABASE rajneesh\n";
+	$sql = "CREATE DATABASE rajneesh";
 	if ($conn->query($sql) === TRUE) {
 		echo "Database created successfully\n";
 	} else {
