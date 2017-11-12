@@ -30,6 +30,29 @@ class RepositoriesController extends AppController
 		}
 		echo $cont;exit;
 	} 
+	
+	public function search()
+	{
+		$search_term = $this->request->query['term'];
+		$repos = $this->Repositories->find()->select(['id', 'name'])->where(['name LIKE' => '%'.$search_term.'%'])->toArray();
+		foreach($repos as $repo) {
+			$names[] = array('data' => $repo['id'], 'value' => $repo['name']);
+		}
+		echo json_encode($names);exit;
+	}
+	
+	public function searchpage()
+	{
+		$data = $this->request->data;
+		$id = $data['id'];
+		
+		$repos = $this->Repositories->find()->where(['id' => $id]);
+		$cont = '';
+		foreach ($repos as $repo) {
+            $cont .= '<tr><td>'.$repo->id.'</td><td>'.$repo->name.'</td><td>'.$repo->full_name.'</td><td>'.$repo->size.'</td><td>'.$repo->updated_at.'</td><td>'.$repo->git_url.'</td></tr>';
+		}
+		echo $cont;exit;
+	} 
     public function index()
     {
         $repositories = $this->Repositories->find('all', ['limit' => 5, 'offset' => 0]);
