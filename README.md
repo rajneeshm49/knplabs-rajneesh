@@ -9,4 +9,4 @@ STEPS TO RUN
 
 5. Need to go to http://localhost/knplabs-rajneesh link.
 
-NOTE: While development I had to uncomment some lines in php.ini (for e,g, extension=php_intl.dll) on local machine then it worked fine. The project is built in cakephp3
+NOTE: While development I had to uncomment some lines in php.ini (for e,g, extension=php_intl.dll) on local machine then it worked fine. The project is built in cakephp3. (mod_rewrite issue might occur on some machine, due to which css effect does not work, in that case we will have to 'AllowOverride All' in apache configuration file)
